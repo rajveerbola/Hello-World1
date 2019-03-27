@@ -12,7 +12,7 @@ hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 })
 
-app.use((request, response, next)=>{
+//app.use((request, response, next)=>{
     //var time = new Date().toString();
     //console.log(`${time}: ${request.method} ${request.url}`);
     //var log = `${time}: ${request.method} ${request.url}`;
@@ -21,9 +21,9 @@ app.use((request, response, next)=>{
            // console.log('Unable to log message');
        // }
     //});
-    response.render('maintence.hbs')
+    //response.render('maintence.hbs')
     //next();
-});
+//});
 
 
 
