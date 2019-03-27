@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1{color:rebeccapurple}
+        p{color: darkred}
+    </style>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+
+
+<body>
+{{> header}}
+<script>
+    app.get('/currency', (request, response)=> {
+        {
+            var currencyPro = (curr) => {
+                return new Promise((resolve, reject) => {
+                    request({
+                        url: `https://api.exchangeratesapi.io/latest?symbols=${curr}&base=USD`,
+                        json: true
+                    }
+                }
+            }
+            (error, response, body) => {
+                if (body.error){
+                    reject(error)
+                }else{
+                    resolve(`One USD equals ${body.rates[curr]} ${curr} (the currency of Canada)`)
+                }});
+</script>
+
+
+
+<!--footer>
+    <p>Copyright {{year}}</p>
+</footer-->
+
+
+</body>
+{{> footer}}
+</html>
